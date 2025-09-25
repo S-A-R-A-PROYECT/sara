@@ -13,11 +13,11 @@ Funciona con un dispositivo electrónico (ESP32 con lector biométrico o lector 
 
 * Ver quién ya recibió comida y quién no
 
-*Generar reportes de entregas en tiempo real
+* Generar reportes de entregas en tiempo real
 
-*Llevar estadísticas para evitar pérdidas
+* Llevar estadísticas para evitar pérdidas
 
-*Además, si no hay internet, el sistema sigue trabajando y sincroniza los datos después
+* Además, si no hay internet, el sistema sigue trabajando y sincroniza los datos después
 
 En pocas palabras: S.A.R.A. evita filas largas , errores y desperdicios, asegurando que cada estudiante reciba lo que le corresponde y el plus de sara que es un programa de estudiantes para estudiantes
 
