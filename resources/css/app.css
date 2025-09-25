@@ -26,6 +26,11 @@
     --color-zinc-950: #0a0a0a;
 
     --color-sara-main: #114d58;
+    --color-sara-secondary: #39bfc0;
+    --color-sara-complementary: #f2ac2a;
+    --color-sara-tertiary: #f25041;
+    --color-sara-background: #f2f2f2;
+    
 
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
