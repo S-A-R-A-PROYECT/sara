@@ -9,9 +9,9 @@
 S.A.R.A. es un sistema que registra y controla la entrega de refrigerios y almuerzos en el colegio.
 Funciona con un dispositivo electrónico (ESP32 con lector biométrico o lector de codigo de barras ), que identifica al estudiante en segundos y marca su entrega automáticamente
 
-Todo queda guardado en una plataforma web donde los profesores y coordinadores y hasta el mismo estudiante pueden:
+* Todo queda guardado en una plataforma web donde los profesores y coordinadores y hasta el mismo estudiante pueden:
 
-Ver quién ya recibió comida y quién no
+* Ver quién ya recibió comida y quién no
 
 Generar reportes de entregas en tiempo real
 
