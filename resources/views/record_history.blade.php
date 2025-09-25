@@ -1,4 +1,4 @@
-@extends('templates.hitorial-de-registros')
+@extends('templates.students')
 
 @section('content')
 
