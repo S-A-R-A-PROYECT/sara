@@ -22,3 +22,7 @@ Además, si no hay internet, el sistema sigue trabajando y sincroniza los datos 
 
 En pocas palabras: S.A.R.A. evita filas largas , errores y desperdicios, asegurando que cada estudiante reciba lo que le corresponde y el plus de sara que es un programa de estudiantes para estudiantes
 </p>
+## objetivos
+<p>
+Se propone desarrollar un sistema automatizado de control y visualización en tiempo real para la entrega de alimentos escolares, incorporando herramientas biométricas, comunicación en red, almacenamiento local y servicios en la nube.
+</p> 
