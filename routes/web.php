@@ -19,6 +19,11 @@ Route::get('/estudiante', function () {
     return view('estudiantes.view');
 });
 
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
