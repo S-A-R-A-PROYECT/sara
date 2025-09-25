@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('profesores');
 })->name('home');
 
 Route::get('/profesores', function () {
