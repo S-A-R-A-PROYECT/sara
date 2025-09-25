@@ -1,5 +1,6 @@
 # Bievenidos S.A.R.A!
 
+
 <div align="center">
   <img width="500" src="https://github.com/user-attachments/assets/dca705ab-cc9d-42ec-8b45-556efa0bec4d" />
   ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
