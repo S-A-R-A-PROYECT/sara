@@ -5,7 +5,6 @@
   ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
 </div>
 
-
 <p>
 S.A.R.A. es un sistema que registra y controla la entrega de refrigerios y almuerzos en el colegio.
 Funciona con un dispositivo electrónico (ESP32 con lector biométrico o lector de codigo de barras ), que identifica al estudiante en segundos y marca su entrega automáticamente
@@ -21,8 +20,11 @@ Llevar estadísticas para evitar pérdidas
 Además, si no hay internet, el sistema sigue trabajando y sincroniza los datos después
 
 En pocas palabras: S.A.R.A. evita filas largas , errores y desperdicios, asegurando que cada estudiante reciba lo que le corresponde y el plus de sara que es un programa de estudiantes para estudiantes
+
 </p>
-## objetivos
+
+## Objetivos
+
 <p>
 Se propone desarrollar un sistema automatizado de control y visualización en tiempo real para la entrega de alimentos escolares, incorporando herramientas biométricas, comunicación en red, almacenamiento local y servicios en la nube.
-</p> 
+</p>
