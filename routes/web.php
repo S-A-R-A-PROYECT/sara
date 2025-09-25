@@ -18,9 +18,16 @@ Route::get('/profesores', function () {
 Route::get('/estudiante', function () {
     return view('estudiantes.view');
 });
+
 Route::get('/historiall-de-registro', function () {
     return view('record_history');
 });
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
