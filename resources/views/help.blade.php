@@ -1,5 +1,5 @@
-@extends('templates.dashnoard')
-
+@extends('templates.students') 
+{{-- LUEGO TENEMOS QUE CREAR UNA GENERAL!!! --}}
 @section('content')
 
 <header class="flex justify-between items-center px-6 md:px-12 py-6 border-b-2 border-[#114D58]">
@@ -15,7 +15,7 @@
     </h2>
   </div>
 
-  <img src="/advice_page/img/logos S.A.R.A. (22).png" alt="Logo S.A.R.A"
+  <img src="{{ asset('advice_page/img/logo-sara-22.png') }}" alt="Logo S.A.R.A"
        class="w-44 md:w-64 h-auto transition-transform duration-300 hover:scale-110 cursor-pointer">
 </header>
 
