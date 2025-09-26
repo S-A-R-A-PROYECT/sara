@@ -9,7 +9,7 @@
         @yield('content')
     </div>
 
-    <footer class="w-full bg- text-white text-xs py-3 text-center">
+    <footer class="w-full bg-sara-complementary text-white text-xs py-3 text-center">
         © {{\Carbon\Carbon::now()->year}} - Proyecto SASHA | By: S.A.R.A & System Shadow | Colegio OEA I.E.D
     </footer>
 </body>
