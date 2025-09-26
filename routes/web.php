@@ -32,6 +32,14 @@ Route::get('/contact', function () {
     return view('page-contact');
 });
 
+Route::get('/us', function () {
+    return view('us-page    ');
+});
+
+Route::get('/landing', function () {
+    return view('landig-page');
+});
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
