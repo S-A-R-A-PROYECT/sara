@@ -17,7 +17,8 @@ class JourneyFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'date' => fake()->dateTime(),
+            'meal_quantity' => fake()->numberBetween(100, 200),
         ];
     }
 }

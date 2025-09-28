@@ -10,7 +10,6 @@ use Laravel\Fortify\Features;
 Route::get('/', function () {
     return view('profesores');
 })->name('home');
-
 Route::get('/profesores', function () {
     return view('profesores');
 });
