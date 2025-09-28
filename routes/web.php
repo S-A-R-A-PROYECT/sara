@@ -7,8 +7,17 @@ use App\Livewire\Settings\TwoFactor;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
+
 Route::get('/', function () {
     return view('landig-page');
+
+  
+Route::get('/history', function () {
+    return view('record_history');
+});
+  
+Route::get('/profesores', function () {
+    return view('profesores');
 });
 
 

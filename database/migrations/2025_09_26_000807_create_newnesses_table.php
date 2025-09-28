@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('newnesses', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("user_id");
+            $table->string("subject");
+            $table->text("text");
+            $table->string("slug");
             $table->timestamps();
         });
     }
