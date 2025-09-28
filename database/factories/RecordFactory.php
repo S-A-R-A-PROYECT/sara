@@ -2,6 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Enums\RecordType;
+use App\Models\Device;
+use App\Models\Journey;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +21,10 @@ class RecordFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'date' => fake()->dateTime(),
+            'record_type' => RecordType::manual,
+            'journey_id' => Journey::factory(),
+            'user_id' => User::factory(),
         ];
     }
 }
