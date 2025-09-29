@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/history', function () {
     return view('record_history');
 });
-});
+
 
 Route::get('/profesores', function () {
     return view('profesores');
@@ -49,7 +49,6 @@ Route::get('/contact', function () {
 });
 
 Route::get('/us', function () {
-    return view('us-page');
     return view('us-page');
 });
 
