@@ -44,6 +44,9 @@ Route::get('/us', function () {
     return view('us-page');
 });
 
+Route::get('/404', function () {
+    return 'hola 404';
+});
 
 Route::get('/status', function () {
     return view('pag-status');
