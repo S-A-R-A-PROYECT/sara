@@ -47,7 +47,32 @@
                 </button>
             </div>
         </div>
+            <div class="grid grid-cols-2 gap-10 w-[44rem]">
+                <button
+                    class="bg-teal-900 text-white text-2xl font-semibold py-6 rounded-xl shadow-lg hover:bg-teal-700 hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    Acceder al sistema
+                </button>
+                <button
+                    class="bg-teal-900 text-white text-2xl font-semibold py-6 rounded-xl shadow-lg hover:bg-teal-700 hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    Conoce más de S.A.R.A
+                </button>
+                <button
+                    class="bg-teal-900 text-white text-2xl font-semibold py-6 rounded-xl shadow-lg hover:bg-teal-700 hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    Noticias / Actualizaciones
+                </button>
+                <button
+                    class="bg-teal-900 text-white text-2xl font-semibold py-6 rounded-xl shadow-lg hover:bg-teal-700 hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    Soporte / Ayuda
+                </button>
+            </div>
+        </div>
 
+
+        <div class="w-[32rem]">
+            <img src="{{ asset('img/almuerzo.png') }}" alt="Estudiantes recibiendo almuerzo"
+                class="w-full object-contain">
+        </div>
+    </main>
 
         <div class="w-[32rem]">
             <img src="{{ asset('img/almuerzo.png') }}" alt="Estudiantes recibiendo almuerzo"
