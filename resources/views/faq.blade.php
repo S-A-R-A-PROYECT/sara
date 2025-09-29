@@ -9,7 +9,7 @@
     <h1 class="text-2xl md:text-3xl font-extrabold text-teal-700 text-center md:text-left flex items-center gap-2 
                hover:text-teal-900 transition-colors duration-300 cursor-pointer 
                transition-transform hover:scale-105 hover:drop-shadow-lg">
-      <!-- Flecha volver -->
+
       <svg xmlns="http://www.w3.org/2000/svg" onclick="history.back()" 
            class="w-7 h-7 text-green-900 hover:text-green-950 transition-colors duration-300 cursor-pointer" 
            fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -17,12 +17,11 @@
       </svg>
       ¿Tienes preguntas? (FAQ)
     </h1> 
-    <img src="{{ asset('img/logo-sara-verde-serv.png') }}" alt="Logo S.A.R.A." 
+    <img src="{{ asset('img/logo_sara-verde-oscuro.png') }}" alt="Logo S.A.R.A." 
          class="w-32 md:w-56 h-auto mt-4 md:mt-0 transform hover:scale-105 hover:drop-shadow-lg transition-transform duration-300 cursor-pointer"> 
   </header>
 
-  <!-- Imágenes intro -->
-  <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 py-8 space-y-6 md:space-y-0"> 
+ <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 py-8 space-y-6 md:space-y-0"> 
     <img src="{{ asset('img/trabajador-volteado.png') }}" alt="Trabajador" 
          class="w-80 md:w-128 h-auto transform hover:scale-105 hover:drop-shadow-lg transition-transform duration-300 cursor-pointer"> 
     <img src="{{ asset('img/estudiante-pregunta.png') }}" alt="Estudiante" 
@@ -84,7 +83,8 @@
           </ul>
         </div>
       </div>
-<!-- Pregunta 4 -->
+
+      <!-- Pregunta 4 -->
       <h2 id="accordion-heading-4">
         <button type="button" class="flex justify-between items-center w-full p-6 font-semibold text-left text-gray-900 border border-gray-200 text-xl 
                        hover:bg-teal-50 transition-colors duration-300 transition-transform hover:scale-105 hover:drop-shadow-md" 
@@ -153,32 +153,30 @@
 
     </div>
   </section>
-    </div>
-  </section>
 
   <!-- Encuesta -->
   <section class="max-w-4xl mx-auto p-8 mt-12 mb-20 border-2 border-teal-700 rounded-2xl bg-gray-50 text-lg 
-                  hover:shadow-lg transition-shadow duration-300 transition-transform hover:scale-105 hover:drop-shadow-lg">
+                  hover:shadow-lg transition-shadow duration-300">
     <h2 class="text-2xl font-bold text-teal-700 mb-3">¿No encontraste tu pregunta en la lista?</h2>
     <p class="text-gray-700 mb-6">Escríbela aquí y nuestro equipo de S.A.R.A. te dará una respuesta personalizada en el menor tiempo posible.</p>
 
-    <form class="space-y-6 transition-transform duration-300 hover:scale-105 hover:drop-shadow-lg">
+    <form class="space-y-6">
       <div>
         <label for="nombre" class="block font-semibold text-gray-700">Nombre</label>
         <input type="text" id="nombre" placeholder="Tu nombre" 
-               class="w-full p-3 border rounded-lg text-lg hover:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500 transition">
+               class="w-full p-3 border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition">
       </div>
 
       <div>
         <label for="correo" class="block font-semibold text-gray-700">Correo</label>
         <input type="email" id="correo" placeholder="Tu correo electrónico" 
-               class="w-full p-3 border rounded-lg text-lg hover:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500 transition">
+               class="w-full p-3 border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition">
       </div>
 
       <div>
         <label for="categoria" class="block font-semibold text-gray-700">Deseo ayuda con:</label>
         <select id="categoria" 
-                class="w-full p-3 border rounded-lg text-lg hover:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500 transition">
+                class="w-full p-3 border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition">
           <option value="">Selecciona una opción</option>
           <option value="tecnico">Soporte técnico</option>
           <option value="uso">Cómo usar S.A.R.A.</option>
@@ -190,7 +188,7 @@
       <div>
         <label for="pregunta" class="block font-semibold text-gray-700">Tu pregunta</label>
         <textarea id="pregunta" rows="4" placeholder="Escribe tu pregunta aquí..." 
-                  class="w-full p-3 border rounded-lg text-lg hover:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500 transition"></textarea>
+                  class="w-full p-3 border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition"></textarea>
       </div>
 
       <div class="flex justify-center mt-6">

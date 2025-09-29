@@ -15,7 +15,8 @@
     </h2>
   </div>
 
-  <img src="{{ asset('advice_page/img/logo-sara-22.png') }}" alt="Logo S.A.R.A"
+  {{-- CORREGIDO: --}}
+  <img src="{{ asset('img\logo_sara-verde-oscuro.png') }}" alt="Logo S.A.R.A"
        class="w-44 md:w-64 h-auto transition-transform duration-300 hover:scale-110 cursor-pointer">
 </header>
 
@@ -96,8 +97,5 @@
   </button>
 </div>
 
-<footer class="bg-[#114D58] text-white text-center text-base md:text-lg py-5">
-  © 2025 - Proyecto S.A.R.A | Colegio OEA I.E.D
-</footer>
 
 @endsection

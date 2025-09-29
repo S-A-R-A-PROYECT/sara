@@ -40,6 +40,14 @@ Route::get('/landing', function () {
     return view('landig-page');
 });
 
+Route::get('/status', function () {
+    return view('pag-status');
+});
+
+
+
+
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

@@ -10,7 +10,7 @@
       
    
       <div class="flex justify-center">
-        <img src="{{ asset('img/logo-sara-verde-serv.png') }}" 
+        <img src="{{ asset('img\logo_sara-verde-oscuro.png') }}" 
              alt="Logo S.A.R.A" 
              class="w-96 h-auto object-contain hover:scale-105 transition-all duration-300">
       </div>

@@ -16,15 +16,13 @@
       <h1>Contacto Soporte</h1>
     </div>
 
-    <!-- Logo corregido -->
-    <img src="{{ asset('img/logo-sara-verde-serv.png') }}" alt="Logo S.A.R.A" 
+    <img src="{{ asset('img/logo_sara-verde-oscuro.png') }}" alt="Logo S.A.R.A" 
          class="w-40 md:w-52 h-auto transition-transform duration-300 hover:scale-110 cursor-pointer">
   </header>
 
 
   <main class="flex-grow flex flex-col lg:flex-row px-8 mt-12 gap-8">
 
-    <!-- Columna izquierda: Texto + Formulario -->
     <div class="flex-1 flex flex-col items-center">
       <p class="text-base md:text-lg mb-10 text-center max-w-xl transition-transform duration-300 hover:scale-105 hover:drop-shadow-md">
         Si tu duda no aparece aquí, puedes escribir a: <br>
@@ -35,9 +33,7 @@
         o déjanos tu inquietud y nosotros la responderemos
       </p>
 
-  
-      <form class="rounded-xl border border-teal-300 p-6 shadow-md bg-white w-full max-w-3xl 
-                   transition-transform duration-300 hover:scale-105 hover:drop-shadow-lg">
+      <form class="rounded-xl border border-teal-300 p-6 shadow-md bg-white w-full max-w-4xl">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <input type="text" placeholder="Nombre" 
                  class="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500">
@@ -58,10 +54,9 @@
       </form>
     </div>
 
-    
     <div class="flex-1 flex justify-center items-end relative">
       <img src="{{ asset('img/trabajador.png') }}" alt="Trabajador" 
-           class="w-[500px] md:w-[760px] h-auto transition-transform duration-300 hover:scale-110 hover:drop-shadow-2xl">
+           class="w-[500px] md:w-[760px] h-auto">
     </div>
     
   </main>
