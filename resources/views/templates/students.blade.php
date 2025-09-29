@@ -5,7 +5,7 @@
 
 <body>
 
-        <div class="">
+    <div class="">
         @yield('content')
     </div>
     <footer class="w-full bg-[#114D58] text-white text-xs py-3 text-center">
