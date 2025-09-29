@@ -8,8 +8,8 @@
     <header class="p-6 bg-white shadow-md flex justify-between items-center">
         <div class="flex items-center gap-3">
             <!-- Flecha de devolver -->
-            <a href="javascript:history.back()" 
-               class="text-[#F2AC2A] hover:text-yellow-600 transition-transform duration-200 hover:scale-110">
+            <a href="{{ route('home') }}"
+                class="text-[#F2AC2A] hover:text-yellow-600 transition-transform duration-200 hover:scale-110">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
@@ -141,6 +141,7 @@
             class="px-3 py-1 border rounded-lg transition duration-200 hover:bg-gray-200 hover:scale-105">Siguiente</button>
     </div>
 
-    
+
 </body>
+
 </html>
