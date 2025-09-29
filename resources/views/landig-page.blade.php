@@ -20,10 +20,11 @@
                     class="bg-teal-900 text-white text-2xl font-semibold py-6 rounded-xl shadow-lg hover:bg-teal-700 hover:scale-105 hover:shadow-xl transition-all duration-300">
                     Acceder al sistema
                 </button>
-                <button
+                <a href="{{ route('us.view') }}"
                     class="bg-teal-900 text-white text-2xl font-semibold py-6 rounded-xl shadow-lg hover:bg-teal-700 hover:scale-105 hover:shadow-xl transition-all duration-300">
                     Conoce más de S.A.R.A
-                </button>
+                    
+                </a>
                 <button
                     class="bg-teal-900 text-white text-2xl font-semibold py-6 rounded-xl shadow-lg hover:bg-teal-700 hover:scale-105 hover:shadow-xl transition-all duration-300">
                     Noticias / Actualizaciones

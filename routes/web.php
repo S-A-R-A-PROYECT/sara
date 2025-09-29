@@ -42,8 +42,7 @@ Route::get('/contact', function () {
 
 Route::get('/us', function () {
     return view('us-page');
-});
-
+})->name('us.view');
 
 Route::get('/status', function () {
     return view('pag-status');
