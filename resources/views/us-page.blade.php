@@ -1,26 +1,34 @@
 @extends('templates.students') 
-{{-- LUEGO TENEMOS QUE CREAR UNA GENERAL!!! --}}
+
 @section('content')
 
 <div class="bg-white font-sans flex flex-col min-h-screen"> 
 
+  <!-- Header -->
   <header class="flex justify-between items-center px-6 md:px-12 py-6 border-b-2 border-[#114D58]">
-    <div class="flex items-center gap-3 cursor-pointer">
-      <svg onclick="history.back()" xmlns="http://www.w3.org/2000/svg" 
-           class="w-9 h-9 text-gray-700 hover:text-gray-900 transition-transform hover:scale-110" 
-           fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-      </svg>
+    <div class="flex items-center gap-3">
+
+      <a href="{{ route('home') }}" 
+         class="w-9 h-9 text-gray-700 hover:text-gray-900 transition-transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
+             viewBox="0 0 24 24" stroke="currentColor" class="w-9 h-9">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M15 19l-7-7 7-7" />
+        </svg>
+      </a>
+
       <h2 class="text-2xl md:text-3xl font-bold text-[#114D58] 
                  transition-transform duration-300 ease-out hover:-translate-y-2 hover:scale-105">
         ¿Qué es S.A.R.A?
       </h2>
     </div>
-   <img src="{{ asset('img/logo-sara-verde-serv.png') }}" alt="Logo S.A.R.A" 
-     class="w-44 md:w-64 h-auto transition-transform duration-300 hover:scale-110 cursor-pointer">
 
+    <!-- Logo -->
+    <img src="{{ asset('img/logo_sara-verde-oscuro.png') }}" alt="Logo S.A.R.A" 
+         class="w-44 md:w-64 h-auto transition-transform duration-300 hover:scale-110 cursor-pointer">
   </header>
 
+  <!-- Descripción -->
   <section class="max-w-5xl mx-auto text-center mt-12 mb-10 px-6">
     <h1 class="text-4xl md:text-5xl font-extrabold text-[#114D58] mb-6">
       Sistema Automatizado de Registro de Alimentación
@@ -35,10 +43,11 @@
 
   <hr class="border-t-2 border-gray-300 w-3/4 mx-auto mb-12">
 
+  <!-- Tarjetas -->
   <main class="flex-grow flex justify-center px-6 pb-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8 max-w-7xl w-full text-lg md:text-xl items-stretch">
 
- 
+      <!-- Objetivos -->
       <div class="group cursor-pointer h-full flex flex-col">
         <div class="flex justify-center mb-4">
           <div class="bg-[#F2AC2A] text-white font-bold px-6 py-2 rounded-md text-xl shadow-md 
@@ -57,7 +66,7 @@
         </div>
       </div>
 
-  
+      <!-- Quiénes somos -->
       <div class="group cursor-pointer h-full flex flex-col">
         <div class="flex justify-center mb-4">
           <div class="bg-[#114D58] text-white font-bold px-6 py-2 rounded-md text-xl shadow-md 
@@ -83,7 +92,7 @@
         </div>
       </div>
 
-   
+      <!-- Visión -->
       <div class="group cursor-pointer h-full flex flex-col">
         <div class="flex justify-center mb-4">
           <div class="bg-[#F25041] text-white font-bold px-6 py-2 rounded-md text-xl shadow-md 
@@ -123,4 +132,3 @@
 
 </div>
 @endsection
-
