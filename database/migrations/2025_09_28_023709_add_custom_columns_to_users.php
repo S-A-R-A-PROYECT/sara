@@ -16,7 +16,6 @@ return new class extends Migration
             $table->enum("rol", UserRol::cases())->nullable();
             $table->string("grade")->nullable();
             $table->string("fingerprint")->nullable();
-            $table->uuid("UUID")->nullable(); // Indentificadores universales
             $table->integer("document")->unique()->nullable();
             $table->string("document_type")->nullable();
 

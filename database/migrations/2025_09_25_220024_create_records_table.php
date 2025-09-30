@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('records', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('user_id');
+            $table->uuid('user_id');
             $table->dateTime("date");
             $table->enum('record_type', RecordType::cases());
             $table->unsignedBigInteger("journey_id");
