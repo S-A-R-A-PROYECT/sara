@@ -63,7 +63,7 @@ Route::get('aun no estan arriba', function () {
 // Status
 
 Route::get('/status', function () {
-    return view('noticias');
+    return view('status_page');
 })->name('status');
 
 
