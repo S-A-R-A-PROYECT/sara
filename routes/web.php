@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
 
-
+// Rutas para todos los usuarios
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 // Página principal
 Route::get('/', function () {
     return view('landig-page');
@@ -56,24 +57,15 @@ Route::get('/us', function () {
 })->name('us');
 
 // Noticias / actualizaciones
-Route::get('aun no estan arriba', function () {
-    return view('aun no ');
+Route::get('/actualizaciones', function () {
+    return view('actualizaciones');
 })->name('noticias');
 
 // Status
 
 Route::get('/status', function () {
-    return view('noticias');
+    return view('status_page');
 })->name('status');
-
-
-
-// Status
-
-Route::get('/status/coordinadores', function () {
-    return view('pag-status');
-})->name('status');
-
 
 
 Route::view('dashboard', 'dashboard')
@@ -81,7 +73,39 @@ Route::view('dashboard', 'dashboard')
     ->name('dashboard');
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// Rutas para los  teachers y coordinadores
 
+Route::get('/asig-teacher', function () {
+    return view('teachers.asig-coordinadores');
+})->name('asignacion-teacher');
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Rutas para estudiantes
+
+Route::get('/mockup', function () {
+    return view('students.mainstudent');
+})->name('mockup');
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Rutas para desarrolladores
+Route::get('/chatsar', function () {
+    return view('developers.chat.interno_chat');
+})->name('chat-sara');
+
+Route::get('/chatsara', function () {
+    return view('developers.chat.externo_chat');
+})->name('chat.sara');
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');

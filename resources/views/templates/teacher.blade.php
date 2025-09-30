@@ -9,7 +9,7 @@
 <body>
     <nav> 
         
-        @include('templates.headers.student')
+        @include('templates.headers.teacher')
   
     </nav>
 
