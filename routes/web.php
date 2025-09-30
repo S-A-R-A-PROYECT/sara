@@ -56,8 +56,8 @@ Route::get('/us', function () {
 })->name('us');
 
 // Noticias / actualizaciones
-Route::get('aun no estan arriba', function () {
-    return view('aun no ');
+Route::get('/actualizaciones', function () {
+    return view('actualizaciones');
 })->name('noticias');
 
 // Status

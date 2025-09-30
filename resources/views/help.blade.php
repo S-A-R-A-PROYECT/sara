@@ -1,5 +1,5 @@
-@extends('templates.students') 
-{{-- LUEGO TENEMOS QUE CREAR UNA GENERAL!!! --}}
+@extends('templates.general') 
+
 @section('content')
 
 <header class="flex justify-between items-center px-6 md:px-12 py-6 border-b-2 border-[#114D58]">
