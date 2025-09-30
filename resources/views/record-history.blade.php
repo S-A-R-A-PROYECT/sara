@@ -2,12 +2,22 @@
 
 @section('content')
 
-
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
 
     <!-- Encabezado -->
     <header class="p-6 bg-white shadow-md flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-[#F2AC2A]">Historial de registros</h1>
+        <div class="flex items-center gap-3">
+            <!-- Flecha de devolver -->
+            <a href="{{ route('home') }}"
+                class="text-[#F2AC2A] hover:text-yellow-600 transition-transform duration-200 hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1 class="text-2xl font-bold text-[#F2AC2A]">Historial de registros</h1>
+        </div>
+
         <div class="flex gap-3">
             <button
                 class="px-4 py-2 rounded-xl bg-green-600 text-white transition-transform duration-200 hover:bg-green-700 hover:scale-105">Exportar
@@ -31,7 +41,7 @@
     </section>
 
     <!-- Tabla -->
-    <section class="overflow-x-auto mt-6 mx-4">
+    <section class="overflow-x-auto mt-6 mx-4 flex-grow">
         <table class="min-w-full bg-white rounded-xl shadow-md overflow-hidden">
             <thead class="bg-[#F2AC2A] text-white">
                 <tr>
@@ -120,7 +130,7 @@
         </table>
     </section>
 
-
+    <!-- Paginación -->
     <div class="flex justify-center items-center gap-3 mt-6">
         <button
             class="px-3 py-1 border rounded-lg transition duration-200 hover:bg-gray-200 hover:scale-105">Anterior</button>
@@ -130,6 +140,7 @@
         <button
             class="px-3 py-1 border rounded-lg transition duration-200 hover:bg-gray-200 hover:scale-105">Siguiente</button>
     </div>
+
 
 </body>
 
