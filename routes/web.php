@@ -4,6 +4,8 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\TwoFactor;
+use App\Livewire\Students\Main as StudentMain;
+use App\Livewire\Teacher\Main as TeacherMain;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -14,12 +16,17 @@ Route::get('/', function () {
     return view('landig-page');
 })->name('home');
 
+// Historial
+Route::get('/history/cordinadores', function () {
+    return view('record-history');
+})->name('history'); // coordinadores
+
 // Profesores login
 Route::get('/profesores', function () {
     return view('profesores');
 })->name('profesores');
 
-// FAQ 
+// FAQ
 Route::get('/faq', function () {
     return view('faq');
 })->name('faq');
@@ -31,7 +38,7 @@ Route::get('/help', function () {
 
 // Consejos prácticos
 Route::get('/help/consejos', function () {
-    return view('advice_page'); 
+    return view('advice_page');
 })->name('consejos');
 
 // Contacto de soporte
@@ -40,7 +47,7 @@ Route::get('/help/soporte', function () {
 })->name('soporte');
 
 // Contacto general
-Route::get('/contact', function () {   
+Route::get('/contact', function () {
     return view('page-contact');
 })->name('contact');
 
@@ -66,12 +73,19 @@ Route::view('dashboard', 'dashboard')
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Rutas para los teachers y coordinadores
 
+
+Route::prefix('/docente')->group(function () {
+    Route::get('/', TeacherMain::class)->name('teacher.home');
+})->middleware(['auth', 'auth.session', 'web']);
+
+
+
 Route::get('/asig/docente', function () {
     return view('teachers.asig-coordinadores');
 })->name('asignacion-teacher');
 
 
-// Historial de estduiantes 
+// Historial de estduiantes
 Route::get('/history', function () {
     return view('teachers.record-history');
 })->name('history');
@@ -93,38 +107,34 @@ Route::get('/config/dispositivo/', function () {
 
 
 
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Rutas para estudiantes
 
+Route::prefix('/estudiante')->group(function () {
 
-Route::get('/estudiantes', function () {
-    return view('students.mainstudent');
-})->name('main-estudiantes'); 
+    Route::get('/', StudentMain::class)->name('student.home'); // estudiante/
+
+    Route::get('/chat', function () {
+        return view('students.mainstudent');
+    })->name('student.chat');
+})->middleware(['auth', 'auth.session', 'web']);
 
 
-Route::get('/est/charsara', function () {
-    return view('students.chat.externo_chatestudiantes');
-})->name('chat-externo-estudiantes'); 
 
-Route::get('/est/charsara', function () {
-    return view('students.chat.interno_chatestudiantes');
-})->name('chtat-interno-estudiantes'); 
 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 // Rutas para desarrolladores
 Route::get('/chatsar', function () {
     return view('developers.chat.interno_chat');
-})->name('chat-interno');
+})->name('chat-sara');
 
 Route::get('/chatsara', function () {
     return view('developers.chat.externo_chat');
-})->name('chat-externo');
-
-
+})->name('chat.sara');
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////

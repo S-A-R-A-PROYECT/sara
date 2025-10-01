@@ -20,14 +20,14 @@ class DatabaseSeeder extends Seeder
 
         User::factory(10)->create();
 
-        User::factory()
-            ->has(Newness::factory()->count(3))
-            ->create();
+        // User::factory()
+        //     ->has(Newness::factory()->count(3))
+        //     ->create();
 
-        Journey::factory()
-            ->has(Record::factory()
-                ->has(User::factory()->count(1))
-                ->count(3))
-            ->create();
+        // Journey::factory()
+        //     ->has(Record::factory()
+        //         ->has(User::factory()->count(1))
+        //         ->count(3))
+        //     ->create();
     }
 }

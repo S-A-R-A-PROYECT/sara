@@ -24,7 +24,7 @@ class RecordFactory extends Factory
             'date' => fake()->dateTime(),
             'record_type' => RecordType::manual,
             'journey_id' => Journey::factory(),
-            'user_id' => User::factory(),
+            'user_uuid' => User::factory(),
         ];
     }
 }
