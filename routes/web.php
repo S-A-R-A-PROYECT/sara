@@ -66,7 +66,7 @@ Route::view('dashboard', 'dashboard')
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Rutas para los teachers y coordinadores
 
-Route::get('/asig-teacher', function () {
+Route::get('/asig/docente', function () {
     return view('teachers.asig-coordinadores');
 })->name('asignacion-teacher');
 

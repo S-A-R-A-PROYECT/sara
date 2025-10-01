@@ -1,5 +1,7 @@
 @extends('templates.teachers')
+
 @extends('templates.headers.teacher')
+
 @section('content')
 
   <header class="p-6 bg-white shadow-md flex justify-between items-center">
