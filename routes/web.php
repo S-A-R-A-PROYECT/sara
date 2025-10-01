@@ -8,7 +8,6 @@ use App\Livewire\Students\Main;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
-
 // Rutas para todos los usuarios
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Página principal
@@ -41,11 +40,10 @@ Route::get('/help/consejos', function () {
     return view('advice_page');
 })->name('consejos');
 
-
 // Contacto de soporte
 Route::get('/help/soporte', function () {
     return view('help');
-})->name('quienesomos');
+})->name('soporte');
 
 // Contacto general
 Route::get('/contact', function () {
@@ -63,30 +61,43 @@ Route::get('/actualizaciones', function () {
 })->name('noticias');
 
 // Status
-
 Route::get('/status', function () {
     return view('status_page');
 })->name('status');
-
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-// Rutas para los  teachers y coordinadores
+// Rutas para los teachers y coordinadores
 
-Route::get('/asig-teacher', function () {
+Route::get('/asig/docente', function () {
     return view('teachers.asig-coordinadores');
 })->name('asignacion-teacher');
 
 
+// Historial de estduiantes
+Route::get('/history', function () {
+    return view('teachers.record-history');
+})->name('history');
+
+// pagina pricipal de profesores y cordinadores
+Route::get('/inicio/profesor', function () {
+    return view('teachers.main-teacher');
+})->name('inicio-teacher');
+
+// configuracion de dispositivos
+Route::get('/config/dispositivos', function () {
+    return view('teachers.pag-status');
+})->name('inicio-teacher');
+
+
+
 
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
 // Rutas para estudiantes
 
 Route::prefix('/estudiante')->group(function () {
@@ -103,22 +114,15 @@ Route::prefix('/estudiante')->group(function () {
 
 
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Rutas para desarrolladores
 Route::get('/chatsar', function () {
     return view('developers.chat.interno_chat');
 })->name('chat-sara');
 
-
 Route::get('/chatsara', function () {
     return view('developers.chat.externo_chat');
 })->name('chat.sara');
-
-// Historial
-Route::get('/history/cordinadores', function () {
-    return view('record-history');
-})->name('history'); // coordinadores
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::middleware(['auth'])->group(function () {
@@ -139,6 +143,5 @@ Route::middleware(['auth'])->group(function () {
         )
         ->name('two-factor.show');
 });
-
 
 require __DIR__ . '/auth.php';

@@ -12,6 +12,6 @@ class Main extends Component
 {
     public function render()
     {
-        return view('livewire.students.main');
+        return view('students.main');
     }
 }
