@@ -4,7 +4,8 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\TwoFactor;
-use App\Livewire\Students\Main;
+use App\Livewire\Students\Main as StudentMain;
+use App\Livewire\Teacher\Main as TeacherMain;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -72,6 +73,13 @@ Route::view('dashboard', 'dashboard')
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Rutas para los teachers y coordinadores
 
+
+Route::prefix('/docente')->group(function () {
+    Route::get('/', TeacherMain::class)->name('teacher.home');
+})->middleware(['auth', 'auth.session', 'web']);
+
+
+
 Route::get('/asig/docente', function () {
     return view('teachers.asig-coordinadores');
 })->name('asignacion-teacher');
@@ -95,14 +103,12 @@ Route::get('/config/dispositivos', function () {
 
 
 
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Rutas para estudiantes
 
 Route::prefix('/estudiante')->group(function () {
 
-    Route::get('/', Main::class)->name('student.home'); // estudiante/
+    Route::get('/', StudentMain::class)->name('student.home'); // estudiante/
 
     Route::get('/chat', function () {
         return view('students.mainstudent');
@@ -115,6 +121,8 @@ Route::prefix('/estudiante')->group(function () {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 // Rutas para desarrolladores
 Route::get('/chatsar', function () {
     return view('developers.chat.interno_chat');
@@ -123,6 +131,8 @@ Route::get('/chatsar', function () {
 Route::get('/chatsara', function () {
     return view('developers.chat.externo_chat');
 })->name('chat.sara');
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::middleware(['auth'])->group(function () {
