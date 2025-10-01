@@ -78,9 +78,15 @@ class SashaAuthController extends Controller
 
         $userResponse = Http::withToken($accessToken)->get(config('services.sasha.main_url') . '/api/me')->json();
 
+<<<<<<< HEAD
         // if (!$userResponse->successful()) {
         //     return redirect('/error')->withErrors('No se pudo autenticar con SASHA.');
         // }
+=======
+        if (!$userResponse->successful()) {
+            return redirect('/error')->withErrors('No se pudo autenticar con SASHA.');
+        }
+>>>>>>> 6be994d36aeda8b540374840a632aa590b5e621e
         $sashaUser = $userResponse['data'];
 
         $user = User::updateOrCreate([
@@ -105,6 +111,10 @@ class SashaAuthController extends Controller
 
         Log::info(Auth::user());
 
+<<<<<<< HEAD
         return redirect(route($sashaUser["type"] . '.home'));
+=======
+        return redirect('/');
+>>>>>>> 6be994d36aeda8b540374840a632aa590b5e621e
     }
 }
