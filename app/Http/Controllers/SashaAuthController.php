@@ -80,11 +80,11 @@ class SashaAuthController extends Controller
         $sashaUser = $userResponse['data'];
 
         $user = User::updateOrCreate([
-            'id' => $sashaUser['uuid'],
+            'uuid' => $sashaUser['uuid'],
         ], [
-            'id'                => $sashaUser['uuid'],
             'name'              => $sashaUser["name"],
             'last_name'         => $sashaUser["last_name"],
+            'uuid'              => $sashaUser['uuid'],
             'email'             => $sashaUser['email'],
             'grade'             => $sashaUser['grade'],
             'fingerprint'       => $sashaUser['fingerprint'],

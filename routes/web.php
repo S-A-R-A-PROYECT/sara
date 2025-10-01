@@ -4,6 +4,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\TwoFactor;
+use App\Livewire\Students\Main;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -89,9 +90,8 @@ Route::get('/asig-teacher', function () {
 // Rutas para estudiantes
 
 Route::prefix('/estudiante')->group(function () {
-    Route::get('/', function () {
-        return view('students.mainstudent');
-    })->name('student.home'); // estudiante/
+
+    Route::get('/', Main::class)->name('student.home'); // estudiante/
 
     Route::get('/chat', function () {
         return view('students.mainstudent');
