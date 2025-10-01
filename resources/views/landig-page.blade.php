@@ -1,7 +1,7 @@
 @extends('templates.general')
 
 @section('content')
-
+@dd(Auth::check(), Auth::user());
 <div class="bg-white min-h-screen flex items-center justify-center">
 
     <main class="flex items-center justify-between w-11/12 max-w-7xl">

@@ -97,9 +97,9 @@ class SashaAuthController extends Controller
         ]);
 
         Log::info("Se creo o actualizo un usuario");
-        Activity::all();
-
         Auth::login($user);
+
+        Log::info(Auth::user());
 
         return redirect('/');
     }
