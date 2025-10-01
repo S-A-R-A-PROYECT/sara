@@ -18,14 +18,14 @@ Route::get('/', function () {
 // Historial
 Route::get('/history/cordinadores', function () {
     return view('record-history');
-})->name('history');// coordinadores
+})->name('history'); // coordinadores
 
 // Profesores login
 Route::get('/profesores', function () {
     return view('profesores');
 })->name('profesores');
 
-// FAQ 
+// FAQ
 Route::get('/faq', function () {
     return view('faq');
 })->name('faq');
@@ -37,7 +37,7 @@ Route::get('/help', function () {
 
 // Consejos prácticos
 Route::get('/help/consejos', function () {
-    return view('advice_page'); 
+    return view('advice_page');
 })->name('consejos');
 
 
@@ -47,7 +47,7 @@ Route::get('/help/soporte', function () {
 })->name('quienesomos');
 
 // Contacto general
-Route::get('/contact', function () {   
+Route::get('/contact', function () {
     return view('page-contact');
 })->name('contact');
 
@@ -88,9 +88,17 @@ Route::get('/asig-teacher', function () {
 
 // Rutas para estudiantes
 
-Route::get('/mockup', function () {
-    return view('students.mainstudent');
-})->name('mockup');
+Route::prefix('/estudiante')->group(function () {
+    Route::get('/', function () {
+        return view('students.mainstudent');
+    })->name('student.home'); // estudiante/
+
+    Route::get('/chat', function () {
+        return view('students.mainstudent');
+    })->name('student.chat');
+})->middleware(['auth', 'auth.session', 'web']);
+
+
 
 
 
