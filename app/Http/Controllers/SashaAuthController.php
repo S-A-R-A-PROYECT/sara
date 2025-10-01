@@ -77,6 +77,10 @@ class SashaAuthController extends Controller
         ]);
 
         $userResponse = Http::withToken($accessToken)->get(config('services.sasha.main_url') . '/api/me')->json();
+
+        if (!$userResponse->successful()) {
+            return redirect('/error')->withErrors('No se pudo autenticar con SASHA.');
+        }
         $sashaUser = $userResponse['data'];
 
         $user = User::updateOrCreate([
