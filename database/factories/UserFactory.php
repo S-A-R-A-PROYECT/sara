@@ -26,16 +26,16 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
             'grade' => '1104',
             'fingerprint' => fake()->sha256(),
-            'UUID' => fake()->uuid(),
             'document' => fake()->numberBetween(1000000000, 1999999999),
+            'uuid' => fake()->uuid(),
             'document_type' => 'T.I',
-            'profile_photo_path' => null,
             'rol' => UserRol::Student,
         ];
     }

@@ -7,13 +7,13 @@
 </head>
 
 <body>
-    <nav> 
-        
-        @include('templates.headers.teacher')
-  
+    <nav>
+
+        @include('templates.headers.dev')
+
     </nav>
 
-    <div class="">
+    <div>
         @yield('content')
     </div>
 
