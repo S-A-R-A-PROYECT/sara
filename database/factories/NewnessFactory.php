@@ -19,7 +19,7 @@ class NewnessFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory(),
+            'user_uuid' => User::factory(),
             'subject' => $slug = fake()->sentence(),
             'slug' => Str::slug($slug),
             'text' => fake()->text(),

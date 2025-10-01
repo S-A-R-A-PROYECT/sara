@@ -15,15 +15,15 @@ return new class extends Migration
         Schema::create('records', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('user_id');
+            $table->uuid('user_uuid');
             $table->dateTime("date");
             $table->enum('record_type', RecordType::cases());
             $table->unsignedBigInteger("journey_id");
             $table->unsignedBigInteger("device_id")->nullable();
 
 
-            $table->foreign("user_id")
-                ->references("id")
+            $table->foreign("user_uuid")
+                ->references("uuid")
                 ->on("users")
                 ->onDelete("cascade");
 

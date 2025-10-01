@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'sasha' => [
+        'client_id' => env('SASHA_CLIENT_ID'),
+        'client_secret' => env('SASHA_CLIENT_SECRET'),
+        'redirect' => env('SASHA_REDIRECT_URL'),
+        'main_url' => env('SASHA_URL', 'http://localhost:3500'),
+    ],
+
 ];
