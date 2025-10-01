@@ -1,17 +1,18 @@
-@extends('templates.teacher')
+@extends('templates.teachers')
+@extends('templates.headers.teacher')
 
 @section('content')
 
-<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+<div class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
 
     <!-- Encabezado -->
     <header class="p-6 bg-white shadow-md flex justify-between items-center">
         <div class="flex items-center gap-3">
             <!-- Flecha de devolver -->
             <a href="{{ route('home') }}"
-                class="text-[#F2AC2A] hover:text-yellow-600 transition-transform duration-200 hover:scale-110">
+               class="text-[#F2AC2A] hover:text-yellow-600 transition-transform duration-200 hover:scale-110">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
+                     stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
             </a>
@@ -19,25 +20,26 @@
         </div>
 
         <div class="flex gap-3">
-            <button
-                class="px-4 py-2 rounded-xl bg-green-600 text-white transition-transform duration-200 hover:bg-green-700 hover:scale-105">Exportar
-                Excel</button>
-            <button
-                class="px-4 py-2 rounded-xl bg-red-600 text-white transition-transform duration-200 hover:bg-red-700 hover:scale-105">Descargar
-                PDF</button>
-            <button
-                class="px-4 py-2 rounded-xl bg-[#F2AC2A] text-white transition-transform duration-200 hover:bg-yellow-600 hover:scale-105">Actualizar</button>
+            <button class="px-4 py-2 rounded-xl bg-green-600 text-white transition-transform duration-200 hover:bg-green-700 hover:scale-105">
+                Exportar Excel
+            </button>
+            <button class="px-4 py-2 rounded-xl bg-red-600 text-white transition-transform duration-200 hover:bg-red-700 hover:scale-105">
+                Descargar PDF
+            </button>
+            <button class="px-4 py-2 rounded-xl bg-[#F2AC2A] text-white transition-transform duration-200 hover:bg-yellow-600 hover:scale-105">
+                Actualizar
+            </button>
         </div>
     </header>
 
     <!-- Filtros -->
     <section class="p-6 flex flex-wrap gap-3 items-center bg-white shadow-sm mt-4 rounded-xl mx-4">
         <input type="text" placeholder="Buscar estudiante..."
-            class="px-4 py-2 border rounded-xl focus:ring-2 focus:ring-[#F2AC2A] w-64 transition duration-200 hover:shadow-md">
+               class="px-4 py-2 border rounded-xl focus:ring-2 focus:ring-[#F2AC2A] w-64 transition duration-200 hover:shadow-md">
         <input type="date"
-            class="px-4 py-2 border rounded-xl focus:ring-2 focus:ring-[#F2AC2A] transition duration-200 hover:shadow-md">
+               class="px-4 py-2 border rounded-xl focus:ring-2 focus:ring-[#F2AC2A] transition duration-200 hover:shadow-md">
         <input type="date"
-            class="px-4 py-2 border rounded-xl focus:ring-2 focus:ring-[#F2AC2A] transition duration-200 hover:shadow-md">
+               class="px-4 py-2 border rounded-xl focus:ring-2 focus:ring-[#F2AC2A] transition duration-200 hover:shadow-md">
     </section>
 
     <!-- Tabla -->
@@ -75,32 +77,28 @@
                         <span class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700">Entregado</span>
                     </td>
                     <td class="px-4 py-3 text-center flex gap-3 justify-center">
-                        <button
-                            class="text-blue-500 hover:text-blue-700 transition-transform duration-200 hover:scale-125">✏️</button>
-                        <button
-                            class="text-red-500 hover:text-red-700 transition-transform duration-200 hover:scale-125">🗑️</button>
+                        <button class="text-blue-500 hover:text-blue-700 transition-transform duration-200 hover:scale-125">✏️</button>
+                        <button class="text-red-500 hover:text-red-700 transition-transform duration-200 hover:scale-125">🗑️</button>
                     </td>
                 </tr>
 
                 <!-- ejemplo 2 -->
                 <tr class="hover:bg-gray-100 transition">
                     <td class="px-4 py-3 font-medium">María Gómez</td>
-                    <td class="px-4 py-3">1234567.890</td>
+                    <td class="px-4 py-3">1234567890</td>
                     <td class="px-4 py-3">24/09/2025</td>
                     <td class="px-4 py-3">12:10 PM</td>
                     <td class="px-4 py-3">1002</td>
                     <td class="px-4 py-3">Sí</td>
                     <td class="px-4 py-3">Almuerzo</td>
-                    <td class="px-4 py-3">boto la papa del almuerzo a la basura </td>
+                    <td class="px-4 py-3">Botó la papa del almuerzo a la basura</td>
                     <td class="px-4 py-3">Prof. Sánchez</td>
                     <td class="px-4 py-3">
                         <span class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700">Pendiente</span>
                     </td>
                     <td class="px-4 py-3 text-center flex gap-3 justify-center">
-                        <button
-                            class="text-blue-500 hover:text-blue-700 transition-transform duration-200 hover:scale-125">✏️</button>
-                        <button
-                            class="text-red-500 hover:text-red-700 transition-transform duration-200 hover:scale-125">🗑️</button>
+                        <button class="text-blue-500 hover:text-blue-700 transition-transform duration-200 hover:scale-125">✏️</button>
+                        <button class="text-red-500 hover:text-red-700 transition-transform duration-200 hover:scale-125">🗑️</button>
                     </td>
                 </tr>
 
@@ -110,7 +108,7 @@
                     <td class="px-4 py-3">1098765432</td>
                     <td class="px-4 py-3">24/09/2025</td>
                     <td class="px-4 py-3">12:00 PM</td>
-                    <td class="px-4 py-3">12:20</td>
+                    <td class="px-4 py-3">1202</td>
                     <td class="px-4 py-3">No</td>
                     <td class="px-4 py-3">Ambos</td>
                     <td class="px-4 py-3">-</td>
@@ -119,10 +117,8 @@
                         <span class="px-3 py-1 rounded-full text-sm bg-red-100 text-red-700">Cancelado</span>
                     </td>
                     <td class="px-4 py-3 text-center flex gap-3 justify-center">
-                        <button
-                            class="text-blue-500 hover:text-blue-700 transition-transform duration-200 hover:scale-125">✏️</button>
-                        <button
-                            class="text-red-500 hover:text-red-700 transition-transform duration-200 hover:scale-125">🗑️</button>
+                        <button class="text-blue-500 hover:text-blue-700 transition-transform duration-200 hover:scale-125">✏️</button>
+                        <button class="text-red-500 hover:text-red-700 transition-transform duration-200 hover:scale-125">🗑️</button>
                     </td>
                 </tr>
 
@@ -131,17 +127,14 @@
     </section>
 
     <!-- Paginación -->
-    <div class="flex justify-center items-center gap-3 mt-6">
-        <button
-            class="px-3 py-1 border rounded-lg transition duration-200 hover:bg-gray-200 hover:scale-105">Anterior</button>
+    <div class="flex justify-center items-center gap-3 mt-6 mb-6">
+        <button class="px-3 py-1 border rounded-lg transition duration-200 hover:bg-gray-200 hover:scale-105">Anterior</button>
         <button class="px-3 py-1 border rounded-lg bg-[#F2AC2A] text-white">1</button>
         <button class="px-3 py-1 border rounded-lg transition duration-200 hover:bg-gray-200 hover:scale-105">2</button>
         <button class="px-3 py-1 border rounded-lg transition duration-200 hover:bg-gray-200 hover:scale-105">3</button>
-        <button
-            class="px-3 py-1 border rounded-lg transition duration-200 hover:bg-gray-200 hover:scale-105">Siguiente</button>
+        <button class="px-3 py-1 border rounded-lg transition duration-200 hover:bg-gray-200 hover:scale-105">Siguiente</button>
     </div>
 
+</div>
 
-</body>
-
-</html>
+@endsection

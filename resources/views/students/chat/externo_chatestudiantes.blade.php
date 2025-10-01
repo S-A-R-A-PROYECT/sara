@@ -1,4 +1,4 @@
-@extends('templates.dv')
+@extends('templates.students')
 
 @section('content')
 <div class="flex h-screen">  

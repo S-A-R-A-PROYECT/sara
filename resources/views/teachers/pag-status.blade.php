@@ -1,5 +1,5 @@
-@extends('templates.students')
-
+@extends('templates.teachers')
+@extends('templates.headers.teacher')
 @section('content')
 
 <div class="bg-white text-gray-800 min-h-screen flex flex-col">
