@@ -82,10 +82,14 @@ Route::get('/inicio/profesor', function () {
 })->name('inicio-teacher');
 
 // configuracion de dispositivos
-Route::get('/config/dispositivos', function () {
+Route::get('/config/dispositivos/status', function () {
     return view('teachers.pag-status');
 })->name('inicio-teacher');
 
+// configuracion de dispositivos
+Route::get('/config/dispositivo/', function () {
+    return view('teachers.modal-configdispositivo');
+})->name('modal-configdispositivo');
 
 
 
