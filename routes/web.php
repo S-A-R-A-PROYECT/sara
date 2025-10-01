@@ -110,9 +110,15 @@ Route::get('/chatsar', function () {
     return view('developers.chat.interno_chat');
 })->name('chat-sara');
 
+
 Route::get('/chatsara', function () {
     return view('developers.chat.externo_chat');
 })->name('chat.sara');
+
+// Historial
+Route::get('/history/cordinadores', function () {
+    return view('record-history');
+})->name('history'); // coordinadores
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::middleware(['auth'])->group(function () {
