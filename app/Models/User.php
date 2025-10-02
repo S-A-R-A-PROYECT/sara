@@ -4,7 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use App\Enums\UserRol;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -15,7 +15,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, TwoFactorAuthenticatable, HasUuids;
+    use HasFactory, Notifiable, TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
@@ -23,7 +23,6 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'id',
         'name',
         'last_name',
         'email',
@@ -37,9 +36,6 @@ class User extends Authenticatable
         'password',
         'rol'
     ];
-
-    public $incrementing = false;
-    protected $keyType = 'string';
 
     /**
      * The attributes that should be hidden for serialization.
@@ -61,6 +57,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'rol' => UserRol::class,
         ];
     }
 

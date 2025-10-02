@@ -34,8 +34,8 @@ class UserFactory extends Factory
             'grade' => '1104',
             'fingerprint' => fake()->sha256(),
             'document' => fake()->numberBetween(1000000000, 1999999999),
+            'uuid' => fake()->uuid(),
             'document_type' => 'T.I',
-            'profile_photo_path' => null,
             'rol' => UserRol::Student,
         ];
     }

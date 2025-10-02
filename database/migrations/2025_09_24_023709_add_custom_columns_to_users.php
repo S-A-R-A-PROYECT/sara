@@ -13,6 +13,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
+
+            $table->uuid("uuid")->unique();
             $table->enum("rol", UserRol::cases())->nullable();
             $table->string("grade")->nullable();
             $table->string("fingerprint")->nullable();
@@ -32,7 +34,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn("grade");
             $table->dropColumn("fingerprint");
-            $table->dropColumn("UUID");
+            $table->dropColumn("uuid");
             $table->dropColumn("document");
             $table->dropColumn("document_type");
             $table->dropColumn("last_login_ip");

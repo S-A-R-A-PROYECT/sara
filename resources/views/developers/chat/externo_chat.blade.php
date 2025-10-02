@@ -89,7 +89,7 @@
     </div>
   </div>
 
-  <!-- Panel derecho (logo central) -->
+ 
   <div class="flex-1 flex items-center justify-center">
     <div class="text-center">
       <img src="{{ asset('img/logo_sara-gris.png') }}" 

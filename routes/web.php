@@ -4,16 +4,18 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\TwoFactor;
+use App\Livewire\Students\Chat;
+use App\Livewire\Students\Main as StudentMain;
+use App\Livewire\Teacher\Main as TeacherMain;
+use App\Livewire\Website\Home;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
-
 
 // Rutas para todos los usuarios
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Página principal
-Route::get('/', function () {
-    return view('landig-page');
-})->name('home');
+Route::get('/', Home::class)->name('home');
 
 // Historial
 Route::get('/history/cordinadores', function () {
@@ -40,11 +42,10 @@ Route::get('/help/consejos', function () {
     return view('advice_page');
 })->name('consejos');
 
-
 // Contacto de soporte
 Route::get('/help/soporte', function () {
     return view('help');
-})->name('quienesomos');
+})->name('soporte');
 
 // Contacto general
 Route::get('/contact', function () {
@@ -62,42 +63,61 @@ Route::get('/actualizaciones', function () {
 })->name('noticias');
 
 // Status
-
 Route::get('/status', function () {
     return view('status_page');
 })->name('status');
-
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-// Rutas para los  teachers y coordinadores
+// Rutas para los teachers y coordinadores
 
-Route::get('/asig-teacher', function () {
+
+Route::middleware(['teacher', 'auth', 'web'])->prefix('/docente')->group(function () {
+
+    Route::get('/', TeacherMain::class)->name('teacher.home');
+})->middleware(['web']);
+
+
+
+Route::get('/asig/docente', function () {
     return view('teachers.asig-coordinadores');
 })->name('asignacion-teacher');
 
 
+// // Historial de estduiantes
+// Route::get('/history', function () {
+//     return view('teachers.record-history');
+// })->name('history');
+
+// // pagina pricipal de profesores y cordinadores
+// Route::get('/inicio/profesor', function () {
+//     return view('teachers.main-teacher');
+// })->name('inicio-teacher');
+
+// // configuracion de dispositivos
+// Route::get('/config/dispositivos/status', function () {
+//     return view('teachers.pag-status');
+// })->name('inicio-teacher');
+
+// // configuracion de dispositivos
+// Route::get('/config/dispositivo/', function () {
+//     return view('teachers.modal-configdispositivo');
+// })->name('modal-configdispositivo');
 
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
 // Rutas para estudiantes
 
-Route::prefix('/estudiante')->group(function () {
-    Route::get('/', function () {
-        return view('students.mainstudent');
-    })->name('student.home'); // estudiante/
+Route::middleware(['student', 'auth', 'web'])->prefix('/estudiante')->group(function () {
 
-    Route::get('/chat', function () {
-        return view('students.mainstudent');
-    })->name('student.chat');
-})->middleware(['auth', 'auth.session', 'web']);
+    Route::get('/', StudentMain::class)->name('student.home'); // estudiante/
 
+    Route::get('/chat', Chat::class)->name('student.chat');
+});
 
 
 
@@ -105,20 +125,18 @@ Route::prefix('/estudiante')->group(function () {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 // Rutas para desarrolladores
 Route::get('/chatsar', function () {
     return view('developers.chat.interno_chat');
 })->name('chat-sara');
 
-
 Route::get('/chatsara', function () {
     return view('developers.chat.externo_chat');
 })->name('chat.sara');
 
-// Historial
-Route::get('/history/cordinadores', function () {
-    return view('record-history');
-})->name('history'); // coordinadores
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::middleware(['auth'])->group(function () {
@@ -139,6 +157,5 @@ Route::middleware(['auth'])->group(function () {
         )
         ->name('two-factor.show');
 });
-
 
 require __DIR__ . '/auth.php';
