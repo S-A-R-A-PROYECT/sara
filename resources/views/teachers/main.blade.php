@@ -1,6 +1,6 @@
 <div class="">
     <div class="bg-[#F2F2F2] p-6 min-h-screen font-sans">
-        <h1 class="text-3xl font-bold mb-6 text-[#114D58]">BIENVENIDO {{Auth::user()->name}}</h1>
+        <h1 class="text-3xl font-bold mb-6 text-[#114D58]">BIENVENI@ {{Auth::user()->name}}</h1>
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
 

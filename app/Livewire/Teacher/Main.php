@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Teacher;
 
+use Illuminate\Support\Facades\Gate;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 

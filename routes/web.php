@@ -4,17 +4,18 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\TwoFactor;
+use App\Livewire\Students\Chat;
 use App\Livewire\Students\Main as StudentMain;
 use App\Livewire\Teacher\Main as TeacherMain;
+use App\Livewire\Website\Home;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
 // Rutas para todos los usuarios
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Página principal
-Route::get('/', function () {
-    return view('landig-page');
-})->name('home');
+Route::get('/', Home::class)->name('home');
 
 // Historial
 Route::get('/history/cordinadores', function () {
@@ -74,9 +75,10 @@ Route::view('dashboard', 'dashboard')
 // Rutas para los teachers y coordinadores
 
 
-Route::prefix('/docente')->group(function () {
+Route::middleware(['teacher', 'auth', 'web'])->prefix('/docente')->group(function () {
+
     Route::get('/', TeacherMain::class)->name('teacher.home');
-})->middleware(['auth', 'auth.session', 'web']);
+})->middleware(['web']);
 
 
 
@@ -85,39 +87,37 @@ Route::get('/asig/docente', function () {
 })->name('asignacion-teacher');
 
 
-// Historial de estduiantes
-Route::get('/history', function () {
-    return view('teachers.record-history');
-})->name('history');
+// // Historial de estduiantes
+// Route::get('/history', function () {
+//     return view('teachers.record-history');
+// })->name('history');
 
-// pagina pricipal de profesores y cordinadores
-Route::get('/inicio/profesor', function () {
-    return view('teachers.main-teacher');
-})->name('inicio-teacher');
+// // pagina pricipal de profesores y cordinadores
+// Route::get('/inicio/profesor', function () {
+//     return view('teachers.main-teacher');
+// })->name('inicio-teacher');
 
-// configuracion de dispositivos
-Route::get('/config/dispositivos/status', function () {
-    return view('teachers.pag-status');
-})->name('inicio-teacher');
+// // configuracion de dispositivos
+// Route::get('/config/dispositivos/status', function () {
+//     return view('teachers.pag-status');
+// })->name('inicio-teacher');
 
-// configuracion de dispositivos
-Route::get('/config/dispositivo/', function () {
-    return view('teachers.modal-configdispositivo');
-})->name('modal-configdispositivo');
+// // configuracion de dispositivos
+// Route::get('/config/dispositivo/', function () {
+//     return view('teachers.modal-configdispositivo');
+// })->name('modal-configdispositivo');
 
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Rutas para estudiantes
 
-Route::prefix('/estudiante')->group(function () {
+Route::middleware(['student', 'auth', 'web'])->prefix('/estudiante')->group(function () {
 
     Route::get('/', StudentMain::class)->name('student.home'); // estudiante/
 
-    Route::get('/chat', function () {
-        return view('students.mainstudent');
-    })->name('student.chat');
-})->middleware(['auth', 'auth.session', 'web']);
+    Route::get('/chat', Chat::class)->name('student.chat');
+});
 
 
 
